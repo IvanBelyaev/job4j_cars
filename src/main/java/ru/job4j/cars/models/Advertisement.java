@@ -3,6 +3,7 @@ package ru.job4j.cars.models;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -21,6 +22,10 @@ public class Advertisement {
     private int year;
 
     private boolean status = false;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "publication_date")
+    private Date publicationDate ;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "model_id")
@@ -44,6 +49,7 @@ public class Advertisement {
         ad.setModel(model);
         ad.setBodyType(bodyType);
         ad.setAuthor(author);
+        ad.setPublicationDate(new Date());
         return ad;
     }
 
@@ -112,5 +118,24 @@ public class Advertisement {
 
     public void setPhotos(Set<Photo> photos) {
         this.photos = photos;
+    }
+
+    public Date getPublicationDate() {
+        return publicationDate;
+    }
+
+    public void setPublicationDate(Date publicationDate) {
+        this.publicationDate = publicationDate;
+    }
+
+    @Override
+    public String toString() {
+        return "Advertisement{" +
+                "id=" + id +
+                ", description='" + description + '\'' +
+                ", year=" + year +
+                ", status=" + status +
+                ", publicationDate=" + publicationDate +
+                '}';
     }
 }
