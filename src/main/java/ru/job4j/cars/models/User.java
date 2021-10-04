@@ -2,6 +2,7 @@ package ru.job4j.cars.models;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
@@ -13,6 +14,7 @@ public class User {
 
     private String username;
 
+    @Column(unique = true)
     private String phone;
 
     private String email;
@@ -79,5 +81,18 @@ public class User {
 
     public void setAdvertisements(Set<Advertisement> advertisements) {
         this.advertisements = advertisements;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return id == user.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }

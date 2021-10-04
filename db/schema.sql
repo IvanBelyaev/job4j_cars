@@ -1,7 +1,7 @@
 CREATE TABLE IF NOT EXISTS users (
     id bigserial PRIMARY KEY,
     username VARCHAR NOT NULL,
-    phone varchar NOT NULL,
+    phone varchar UNIQUE,
     email VARCHAR,
     password VARCHAR NOT NULL
 );
@@ -26,6 +26,8 @@ CREATE TABLE IF NOT EXISTS advertisements (
     id bigserial PRIMARY KEY,
     description TEXT NOT NULL,
     manufacture_year INTEGER NOT NULL,
+    price INTEGER NOT NULL,
+    publication_date TIMESTAMP NOT NULL,
     status boolean DEFAULT FALSE,
     model_id INTEGER NOT NULL REFERENCES models (id),
     body_type_id INTEGER NOT NULL REFERENCES body_types (id),

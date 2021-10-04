@@ -1,0 +1,17 @@
+#registration, #exit, #lk {
+    text-decoration: none;
+    color: #a3a3a3;
+}
+
+.adTitle {
+    font-weight: bolder;
+}
+
+a, a:hover {
+    text-decoration: none;
+    color: darkcyan;
+}
+
+img {
+    height: 200px;
+}

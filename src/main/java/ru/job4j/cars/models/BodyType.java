@@ -1,6 +1,7 @@
 package ru.job4j.cars.models;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 @Table(name = "body_types")
@@ -35,5 +36,18 @@ public class BodyType {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        BodyType bodyType = (BodyType) o;
+        return id == bodyType.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }

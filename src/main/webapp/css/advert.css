@@ -1,0 +1,16 @@
+#images img {
+    height: 70px;
+}
+
+.closebtn {
+    position: absolute;
+    top: 5px;
+    left: 30px;
+    color: darkred;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.bigContainer {
+    position: relative;
+}

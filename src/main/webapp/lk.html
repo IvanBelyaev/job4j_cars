@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="css/lk.css">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="./js/lk.js"></script>
+    <script src="./js/auth.js"></script>
+    <title>Продажа машин</title>
+</head>
+<body>
+<nav id="header" class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-2 mr-0" id="logo" href="./main.do">Продажа машин</a>
+    <span class="col-md-2">
+        <button type="button" class="btn btn-primary pr-100" id="addButton" onclick="window.location.href = 'add.do'">Добавить объявление</button>
+    </span>
+</nav>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>
+                Мои объявления
+            </h2>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-6 m-1">
+            <button type="button" class="btn btn-primary" id="showAllButton" onclick="showAll();">
+                Показать все
+            </button>
+            <button type="button" class="btn btn-outline-primary" id="showOnlySoldButton" onclick="showOnlySold();">
+                Только проданные
+            </button>
+            <button type="button" class="btn btn-outline-primary" id="showOnlyUnsoldButton" onclick="showOnlyUnsold();">
+                На продаже
+            </button>
+        </div>
+    </div>
+    <br>
+    <div class="row" id="adTableTitle">
+        <div class="col-md-2">
+            <h5>Фото</h5>
+        </div>
+        <div class="col-md-8 align-self-center">
+            <h5>Описание</h5>
+        </div>
+        <div class="col-md-2 align-self-center">
+            <h5>Статус</h5>
+        </div>
+    </div>
+</div>
+</body>
+</html>

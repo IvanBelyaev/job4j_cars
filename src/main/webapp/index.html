@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="js/chooseModel.js"></script>
+    <script src="./js/auth.js"></script>
+    <title>Продажа машин</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <nav id="header" class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+            <a class="navbar-brand col-md-2 mr-0" id="logo" href="./main.do">Продажа машин</a>
+            <a class="col-md-2 offset-md-6" id="registration" href="./reg.do">Вход и регистрация</a>
+            <span class="col-md-2">
+                <button type="button" class="btn btn-primary pr-100" id="addButton" onclick="return window.location.href='login.do'">
+                    Добавить объявление
+                </button>
+            </span>
+        </nav>
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+            <div class="sidebar-sticky">
+                <form id="myForm">
+                    <div class="form-group">
+                        <label for="brand">Марка</label>
+                        <select class="form-control" id="brand" name="brand" disabled>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="model">Модель</label>
+                        <select class="form-control" id="model" name="model" disabled>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="model">Цена</label>
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control col-auto" placeholder="Цена, от" id="priceFrom" name="priceFrom">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control col-auto" placeholder="до, руб" id="priceTo" name="priceTo">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="model">Год выпуска</label>
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control col-auto" placeholder="от" id="yearFrom" name="yearFrom">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control col-auto" placeholder="до" id="yearTo" name="yearTo">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="bodyType">Тип кузова</label>
+                        <select class="form-control" name="bodyType" id="bodyType">
+                            <option selected value="-1">Тип кузова</option>
+                            <option value="1">седан</option>
+                            <option value="2">хетчбэк</option>
+                            <option value="3">универсал</option>
+                            <option value="4">кабриолет</option>
+                            <option value="5">купе</option>
+                            <option value="6">внедорожник</option>
+                            <option value="7">фургон</option>
+                            <option value="8">минивэн</option>
+                            <option value="9">пикап</option>
+                            <option value="10">микроавтобус</option>
+                        </select>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" id="withPhoto" name="withPhoto">Только с фото</label>
+                    </div>
+                    <button type="button" id="showFilteredAdsButton" class="btn btn-primary">Показать</button>
+                </form>
+            </div>
+        </nav>
+        <main role="main" class="col-md-10 ml-sm-auto col-lg-10 px-4"><div style="position: absolute; inset: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;" class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+            <div class="row" id="cars">
+            </div>
+        </main>
+    </div>
+</div>
+</body>
+</html>
